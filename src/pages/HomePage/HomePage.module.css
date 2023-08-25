@@ -1,0 +1,17 @@
+.homePage {
+  width: 50%;
+  height: 840px;
+  position: relative;
+  border-radius: 20px;
+  background: #FBE0DC;
+}
+
+.homePage__image {
+  background-image: url('../../images/HomePage/girl-and-pet.png');
+  position: absolute;
+  width: 775px;
+  height: 900px;
+  top: -30px;
+  left: -74px;
+  overflow: hidden;
+}

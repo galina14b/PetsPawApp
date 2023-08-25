@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
+
+.layout {
+  background-color: #F8F8F7;
+  height: 100%;
+}
+
+.layout__wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  font-family: 'Jost', sans-serif;
+}
+
+.welcome {
+  background-color: #F8F8F7;
+  margin-left: 117px;
+  width: 446px;
+  height: 544px;
+}
+
+.welcome__title {
+  margin: 80px 0 10px;
+  color: #1D1D1D;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 58px;
+}
+
+.welcome__text {
+  margin: 0 0 60px;
+  color: #8C8C8C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.welcome__subtitle {
+  margin: 0 0 20px;
+  color: #1D1D1D;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.welcome__options {
+  max-width: 446px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options__item {
+
+}
+
+.options__imageBlock {
+  margin-bottom: 10px;
+  width: 138px;
+  height: 198px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.options__imageFrame {
+  position: relative;
+  width: 138px;
+  height: 198px;
+  border-radius: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.60);
+}
+
+.options__navLink {
+  text-decoration: none;
+  display: block;
+}
+
+.options__navLink:hover .options__imageFrame {
+  border: 4px solid #FFF;
+}
+
+.options__navLink:hover .options__link {
+  background: #FBE0DC;
+}
+
+.options__voting {
+  
+}
+
+.options__image_votingFrame {
+  background: #B4B7FF;
+}
+
+.options__image_voting {
+  position: relative;
+  top: calc(50% - (124.468px/2));
+  left: calc(50% - (100px/2));
+  width: 100px;
+  height: 124.468px;
+  background-image: url('../../images/Welcome/vote-table.png');
+}
+
+.options__image_breedsFrame {
+  background: #97EAB9;
+}
+
+.options__image_breeds {
+  position: relative;
+  top: calc(50% - (163px/2));
+  left: calc(50% - (117px/2));
+  width: 117px;
+  height: 163px;
+  background-image: url('../../images/Welcome/pet-breeds.png');
+}
+
+.options__image_galleryFrame {
+background: #FFD280;
+}
+
+.options__image_gallery {
+  position: relative;
+  top: calc(50% - (190px/2));
+  left: calc(50% - (112px/2));
+  width: 112px;
+  height: 190px;
+  background-image: url('../../images/Welcome/images-search.png');
+}
+
+.options__link {
+  width: 138px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFF;
+  color: #FF868E;
+}
+
+.options__link span {
+  display: inline-block;
+  width: 100%;
+  padding-top: calc(16px/2);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 2px;
+}
+
+/* .active .options__imageFrame {
+  background: #FBE0DC;
+}
+
+.active .options__link {
+  background: #FF868E;
+}
+
+.options__link .active span {
+  color: #FFF;
+} */
+
+.selected {
+  background-color: red;
+}
+
+
+
