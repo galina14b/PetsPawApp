@@ -1,7 +1,11 @@
 .homePage {
+  height: 100vh;
   width: 50%;
+    position: relative;
+}
+
+.homePage__wrapper {
   height: 840px;
-  position: relative;
   border-radius: 20px;
   background: #FBE0DC;
 }
@@ -12,6 +16,5 @@
   width: 775px;
   height: 900px;
   top: -30px;
-  left: -74px;
-  overflow: hidden;
+  left: -54px;
 }

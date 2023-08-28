@@ -4,30 +4,37 @@ import { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
 import css from './VotingPage.module.css';
+
+import { NavBlock } from "components/NavBlock/NavBlock";
 import { UserActionList } from "components/UserActionsList/UserActionList";
 import { Options } from "components/Options/Options";
+
 
 const VotingPage = () => {
 
   const [cat, setCat] = useState();
   const [votes, setVotes] = useState();
+  const [favourites, setFavourites] = useState();
   const [sub_id] = useState('user_175');
 
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? "/");
   
+  axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
   const API_KEY = "live_7Rzkwjrh3OQ8HzQ07RaEAqL8UQr3UfdtzTp9O9T9vVaFIktzDSMnFjrOtFmrW5R8";
-
+  axios.defaults.headers.common['x-api-key'] = API_KEY;
+  
   useEffect(() => {
     getRandomImage();
     getVotesResult();
+    getFavourites();
   }, []);
 
   const getRandomImage = async () => {
     try {
       axios.defaults.headers.common['x-api-key'] = API_KEY;
       
-      let response = await axios.get('https://api.thecatapi.com/v1/images/search',
+      let response = await axios.get('/images/search',
         {
           params: { limit: 1, size: "full" }
         });
@@ -39,9 +46,9 @@ const VotingPage = () => {
   }
 
   const getVotesResult = async () => {
-    let response = await axios.get('https://api.thecatapi.com/v1/votes',
+    let response = await axios.get('/votes',
       {
-        params: { order: "DESC", limit: 4 }
+        params: { limit: 3 }
       });
     
     response.data.forEach(element => {
@@ -58,7 +65,7 @@ const VotingPage = () => {
       value: 1 
     }
 
-    await axios.post('https://api.thecatapi.com/v1/votes', body) 
+    await axios.post('/votes', body) 
     getRandomImage();
     getVotesResult();
   }
@@ -70,7 +77,7 @@ const VotingPage = () => {
       value: 0 
     }
     
-    await axios.post('https://api.thecatapi.com/v1/votes', body )
+    await axios.post('/votes', body )
     getRandomImage();
     getVotesResult();
   }
@@ -81,33 +88,32 @@ const VotingPage = () => {
         image_id: cat.id,
         sub_id: sub_id
       }
-      await axios.post('https://api.thecatapi.com/v1/favourites', post_body);
+      await axios.post('/favourites', post_body);
       getRandomImage();
       getVotesResult();
+      getFavourites();
     }catch(error){
       console.log(error)
     }
   }
 
-  // const getFavourites = async () => {
-  //   try{   
-  //     let query_params = {
-  //       limit: 3,
-  //       order: 'DESC',
-  //       page:  page-1,
-  //     }
-  //     let response = await axios.get('https://api.thecatapi.com/v1/favourites', { params: query_params }) 
-  //     this.favourites = response.data 
-  //     this.pagination_count = response.headers['pagination-count'];
-  //     this.clearError();
-  //   }catch(err){
-  //       console.log(err)
-  //   }
-  // }
+  const getFavourites = async () => {
+    try{   
+      let query_params = {
+        limit: 3
+      }
+      let response = await axios.get('/favourites', { params: query_params }) 
+      let result = response.data;
+      setFavourites(result);
+    }catch(error){
+      console.log(error)
+    }
+  }
   
-
+  
   return (
     <div className={css.votingPage}>
+      <NavBlock/>
       <div className={css.votingPage__wrapper}>
 
         <div className={css.votingPage__navigationBlock}>
@@ -138,8 +144,10 @@ const VotingPage = () => {
           <Options voteLike={voteLike} voteDislike={voteDislike} addToFavourites={addToFavourites} />
         </div>
 
-        {votes && <div className={css.votingPage__userActions}>
-          <UserActionList actions={votes}/> </div>}
+        {votes && favourites && <div className={css.votingPage__userActions}>
+          <UserActionList actions={[...votes, ...favourites]}/>
+        </div>
+        }
         
       </div>
     </div>

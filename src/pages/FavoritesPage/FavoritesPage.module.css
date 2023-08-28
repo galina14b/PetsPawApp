@@ -1,0 +1,68 @@
+.favPage {
+  height: 100vh;
+}
+
+.favPage__wrapper {
+  position: relative;
+  margin-top: 10px;
+  padding: 20px;
+  width: 680px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.favPage__navigationBlock {
+  display: flex;
+  align-items: center;
+}
+
+.favPage__backLinkBlock {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.favPage__backLink {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.favPage__backLink svg {
+  fill: #FF868E;
+}
+
+.favPage__backLinkBlock:hover {
+  background-color: #FF868E;
+  cursor: pointer;
+}
+
+.favPage__backLinkBlock:hover svg {
+  fill: #FFFFFF;
+}
+
+.favPage__nameOfPage {
+  margin-left: 10px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FF868E;
+  color: #FBE0DC;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+
+.favPage_historyBlock {
+  margin-top: 40px;
+  position: relative;
+  bottom: 180px;
+}

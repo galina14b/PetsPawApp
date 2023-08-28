@@ -1,0 +1,63 @@
+.likes {
+  height: 100vh;
+}
+
+.likes__wrapper {
+  position: relative;
+  margin-top: 10px;
+  padding: 20px;
+  width: 680px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.likes__navigationBlock {
+  display: flex;
+  align-items: center;
+}
+
+.likes__backLinkBlock {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.likes__backLink {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.likes__backLink svg {
+  fill: #FF868E;
+}
+
+.likes__backLinkBlock:hover {
+  background-color: #FF868E;
+  cursor: pointer;
+}
+
+.likes__backLinkBlock:hover svg {
+  fill: #FFFFFF;
+}
+
+.likes__nameOfPage {
+  margin-left: 10px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FF868E;
+  color: #FBE0DC;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+

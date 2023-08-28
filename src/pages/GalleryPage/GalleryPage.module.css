@@ -1,12 +1,12 @@
 .galleryPage {
-  margin-top: 10px;
-  border-radius: 20px;
-  background: #FFF;
+  height: 100vh;
 }
 
 .galleryPage__wrapper {
   padding: 20px;
-  position: relative;
+  margin-top: 10px;
+  border-radius: 20px;
+  background: #FFF;
 }
 
 .galleryPage__navigationBlock {
@@ -24,7 +24,7 @@
 
 .galleryPage__backLink {
   position: relative;
-  top: 7px;
+  top: 10px;
   left: 10px;
   display: block;
   width: 20px;
@@ -47,7 +47,7 @@
 .galleryPage__nameOfPage {
   margin-left: 10px;
   width: 146px;
-  padding: 5px 30px;
+  padding: 0 30px;
   height: 40px;
   border-radius: 10px;
   background: #FF868E;
@@ -56,26 +56,23 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 40px;
   letter-spacing: 2px;
 }
 
 .upload {
-  display: flex;
   margin-left: auto;
   align-items: center;
-  padding: 12px 30px;
   width: 143px;
   height: 40px;
   border-radius: 10px;
   background: #FBE0DC;
   color: #FF868E;
   text-align: center;
-  font-family: Jost;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 40px;
   letter-spacing: 2px;
 }
 
@@ -193,6 +190,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
+  border: none;
   background: #FFF;
 }
 
@@ -212,159 +210,3 @@
   fill: #FFF;
 }
 
-
-
-
-.gridContainer {
-  margin-top: 20px;
-  display: grid;
-  width: 640px;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(6, 140px);
-  gap: 20px 20px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "vr_img_1 img_2 img_3"
-    "vr_img_1 hr_img_5 hr_img_5"
-    "img_4 hr_img_5 hr_img_5"
-    "img_6 img_7 vr_img_8"
-    "hr_img_9 hr_img_9 vr_img_8"
-    "hr_img_9 hr_img_9 img_10";
-}
-
-.vr_img_1 {
-  grid-area: vr_img_1;
-  border-radius: 20px;
-}
-
-.vr_img_1 img {
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-}
-
-.img_2 {
-  grid-area: img_2;
-  background-image: url('../../images/proba.jpg');
-}
-
-.img_3 {
-  grid-area: img_3;
-  background-image: url('../../images/proba.jpg');
-}
-
-.img_4 {
-  grid-area: img_4;
-  background-image: url('../../images/proba.jpg');
-}
-
-.hr_img_5 {
-  grid-area: hr_img_5;
-  background-image: url('../../images/proba.jpg');
-}
-
-.img_6 {
-  grid-area: img_6;
-  background-image: url('../../images/proba.jpg');
-}
-
-.img_7 {
-  grid-area: img_7;
-  background-image: url('../../images/proba.jpg');
-}
-
-.vr_img_8 {
-  grid-area: vr_img_8;
-  background-image: url('../../images/proba.jpg');
-}
-
-.hr_img_9 {
-  grid-area: hr_img_9;
-  background-image: url('../../images/proba.jpg');
-}
-
-.img_10 {
-  grid-area: img_10;
-  background-image: url('../../images/proba.jpg');
-}
-
-.gridItem {
-  border-radius: 20px;
-  position: relative;
-}
-
-.small {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: block;
-  border-radius: 20px;
-  width: 200px;
-  height: 140px;
-  background: rgba(255, 134, 142, 0.60);
-}
-
-.vertical {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: block;
-  border-radius: 20px;
-  width: 200px;
-  height: 300px;
-  background: rgba(255, 134, 142, 0.60);
-}
-
-.horisontal {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: block;
-  border-radius: 20px;
-  width: 420px;
-  height: 300px;
-  background: rgba(255, 134, 142, 0.60);
-}
-
-.gridItem__like {
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: #FFF;
-  border-radius: 10px;
-  display: block;
-  position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
-  z-index: 3;
-  opacity: 0;
-}
-
-.gridItem__like svg {
-  fill: #FF868E;
-}
-
-.gridItem__like:hover {
-  background-color: #FF868E;
-}
-
-.gridItem__like:hover svg {
-  fill: #FFF;
-}
-
-.gridItem:hover {
-  cursor: pointer;
-}
-
-.gridItem:hover .gridItem__like,
-.gridItem:hover .small,
-.gridItem:hover .vertical,
-.gridItem:hover .horisontal {
-  opacity: 1;
-}

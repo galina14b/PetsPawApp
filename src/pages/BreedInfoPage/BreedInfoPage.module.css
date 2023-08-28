@@ -1,0 +1,96 @@
+.breedsInfoPage {
+  margin-top: 10px;
+  border-radius: 20px;
+  background: #FFF;
+  height: 100vh;
+}
+
+.breedsInfoPage__wrapper {
+  width: 680px;
+  padding: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.breedsInfoPage__navigationBlock {
+  display: flex;
+  align-items: center;
+}
+
+.breedsInfoPage__backLinkBlock {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.breedsInfoPage__backLink {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.breedsInfoPage__backLink svg {
+  fill: #FF868E;
+}
+
+.breedsInfoPage__backLinkBlock:hover {
+  background-color: #FF868E;
+  cursor: pointer;
+}
+
+.breedsInfoPage__backLinkBlock:hover svg {
+  fill: #FFFFFF;
+}
+
+.breedsInfoPage__nameOfPage {
+  margin-left: 10px;
+  width: 146px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+  color: #FF868E;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+
+.breedsInfoPage__breedID {
+  margin-left: 10px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FF868E;
+  color: #FBE0DC;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+
+.breedsInfoPage__imageBlock {
+  margin: 20px auto 0;
+  border-radius: 20px;
+  width: 640px;
+  height: 360px;
+  overflow: hidden;
+}
+
+.breedsInfoPage__info {
+  margin-top: 50px;
+  border-radius: 20px;
+  border: 2px solid #FBE0DC;
+  
+}
+

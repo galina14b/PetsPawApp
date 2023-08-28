@@ -1,0 +1,77 @@
+.searchPage {
+  height: 100vh;
+}
+
+.searchPage__wrapper {
+  margin-top: 10px;
+  padding: 20px;
+  width: 680px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.searchPage__navigationBlock {
+  display: flex;
+  align-items: center;
+}
+
+.searchPage__backLinkBlock {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.searchPage__backLink {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.searchPage__backLink svg {
+  fill: #FF868E;
+}
+
+.searchPage__backLinkBlock:hover {
+  background-color: #FF868E;
+  cursor: pointer;
+}
+
+.searchPage__backLinkBlock:hover svg {
+  fill: #FFFFFF;
+}
+
+.searchPage__nameOfPage {
+  margin-left: 10px;
+  width: 146px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FF868E;
+  color: #FBE0DC;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+
+.searchPage__title {
+  margin: 20px;
+  color: #8C8C8C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.searchPage__title span {
+  color: #1D1D1D;
+  font-weight: 500;
+  line-height: normal;
+}

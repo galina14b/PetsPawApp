@@ -1,0 +1,62 @@
+.dislikes {
+  height: 100vh;
+}
+
+.dislikes__wrapper {
+  position: relative;
+  margin-top: 10px;
+  padding: 20px;
+  width: 680px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.dislikes__navigationBlock {
+  display: flex;
+  align-items: center;
+}
+
+.dislikes__backLinkBlock {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.dislikes__backLink {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.dislikes__backLink svg {
+  fill: #FF868E;
+}
+
+.dislikes__backLinkBlock:hover {
+  background-color: #FF868E;
+  cursor: pointer;
+}
+
+.dislikes__backLinkBlock:hover svg {
+  fill: #FFFFFF;
+}
+
+.dislikes__nameOfPage {
+  margin-left: 10px;
+  padding: 0 30px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FF868E;
+  color: #FBE0DC;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+}

@@ -7,11 +7,12 @@
   position: relative;
   background: #FFF;
   margin-top: 10px;
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .votingPage__navigationBlock {
   display: flex;
+  align-items: center;
 }
 
 .votingPage__backLinkBlock {
@@ -24,7 +25,7 @@
 
 .votingPage__backLink {
   position: relative;
-  top: 7px;
+  top: 10px;
   left: 10px;
   display: block;
   width: 20px;
@@ -47,7 +48,6 @@
 .votingPage__nameOfPage {
   width: 146px;
   margin-left: 10px;
-  padding: 5px 30px;
   height: 40px;
   border-radius: 10px;
   background: #FF868E;
@@ -56,7 +56,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 40px;
   letter-spacing: 2px;
 }
 
@@ -85,88 +85,3 @@
 .votingPage__userActions {
   margin-top: 52px;
 }
-
-/* .options__item {
-  position: relative;
-  width: calc(232px/3);
-  height: 72px;
-}
-
-.options__item:hover {
-  cursor: pointer;
-}
-
-.options__item svg {
-  fill: #FFF;
-  position: relative;
-  top: calc(50% - 15px);
-  left: calc(50% - 15px);
-}
-
-.options__item:nth-child(2) svg {
-  top: calc(50% - 13px);
-}
-
-.options__item:nth-child(1) {
-  background-color: #97EAB9;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.options__item:nth-child(1):hover {
-  background-color: rgba(151, 234, 185, 0.3);
-}
-
-.options__item:nth-child(1):hover svg {
-  fill: #97EAB9;
-}
-
-.options__item:nth-child(1):active {
-  background-color: #97EAB9;
-}
-
-.options__item:nth-child(1):active svg {
-  fill: #FFF;
-}
-
-.options__item:nth-child(2) {
-  background-color: #FF868E;
-}
-
-.options__item:nth-child(2):hover {
-  background-color: rgba(255, 134, 142, 0.3);
-}
-
-.options__item:nth-child(2):hover svg {
-  fill: #FF868E;
-}
-
-.options__item:nth-child(2):active {
-  background-color: #FF868E;
-}
-
-.options__item:nth-child(2):active svg {
-  fill: #FFF;
-}
-
-.options__item:nth-child(3) {
-  background-color: #FFD280;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.options__item:nth-child(3):hover {
-  background-color: rgba(255, 210, 128, 0.3)
-}
-
-.options__item:nth-child(3):hover svg {
-  fill: #FFD280;
-}
-
-.options__item:nth-child(3):active {
-  background-color: #FFD280;
-}
-
-.options__item:nth-child(3):active svg {
-  fill: #FFF;
-} */

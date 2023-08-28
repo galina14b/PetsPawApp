@@ -7,8 +7,9 @@ import styled from "styled-components";
 const StyledLink = styled(NavLink)`
 
   &.active {
-    border: 2px solid red;
+    color: #FF868E;
   }
+  
 `;
 
 
@@ -44,7 +45,7 @@ const Layout = () => {
 
             <div className={css.options__item}>
               <div className={css.options__voting}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/actions/voting">
+                <StyledLink className={css.options__navLink} aria-current="page" to="/voting">
                   <div className={css.options__imageBlock}>
                     <div className={css.options__imageFrame + ' ' + css.options__image_votingFrame}>
                       <div className={css.options__image_voting}></div>
@@ -57,7 +58,7 @@ const Layout = () => {
 
             <div className={css.options__item}>
               <div className={css.options__breeds}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/actions/breeds">
+                <StyledLink className={css.options__navLink} aria-current="page" to="/breeds">
                   <div className={css.options__imageBlock}>
                     <div className={css.options__imageFrame + ' ' + css.options__image_breedsFrame}>
                       <div className={css.options__image_breeds}></div>
@@ -70,7 +71,7 @@ const Layout = () => {
 
             <div className={css.options__item}>
               <div className={css.options__gallery}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/actions/gallery">
+                <StyledLink className={css.options__navLink} aria-current="page" to="/gallery">
                   <div className={css.options__imageBlock}>
                     <div className={css.options__imageFrame + ' ' + css.options__image_galleryFrame}>
                       <div className={css.options__image_gallery}></div>
@@ -83,20 +84,7 @@ const Layout = () => {
 
           </div>
         </div>
-          {/* <nav className="navbar navbar-expand-lg navbar-light bg-light px-4">
-            <div className="container-fluid">
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <StyledLink className="nav-link" aria-current="page" to="/">Home</StyledLink>
-                  </li>
-                  <li className="nav-item">
-                    <StyledLink className="nav-link" to="/movies">Movies</StyledLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav> */}
+          
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
