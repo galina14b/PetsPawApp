@@ -1,5 +1,6 @@
 .votingPage {
   height: 100vh;
+  width: 680px;
 }
 
 .votingPage__wrapper {
@@ -7,6 +8,7 @@
   position: relative;
   background: #FFF;
   margin-top: 10px;
+  margin-bottom: 80px;
   border-radius: 20px;
 }
 
@@ -24,9 +26,9 @@
 }
 
 .votingPage__backLink {
-  position: relative;
-  top: 10px;
-  left: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
   display: block;
   width: 20px;
   height: 20px;
@@ -62,7 +64,7 @@
 
 .votingPage__imageBlock {
   margin-top: 20px;
-  width: 640px;
+  width: 100%;
   object-fit: cover;
   height: 360px;
   border-radius: 20px;
@@ -72,8 +74,8 @@
   position: absolute;
   top: 400px;
   left: calc(50% - (248px/2));
-  width: 248px;
-  height: 80px;
+  width: 240px;
+  height: 72px;
   border: 4px solid #FFF;
   background-color: #FFF;
   border-radius: 10px;
@@ -84,4 +86,39 @@
 
 .votingPage__userActions {
   margin-top: 52px;
+}
+
+@media all and (max-width: 1024px) {
+  .votingPage {
+    width: 520px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .votingPage {
+    margin-top: 80px;
+    width: 728px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .votingPage {
+    width: 405px;
+  }
+
+  .votingPage__wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .votingPage {
+    width: 356px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .votingPage {
+    width: 300px;
+  }
 }

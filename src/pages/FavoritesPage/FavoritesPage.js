@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { NavBlock } from "components/NavBlock/NavBlock";
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { GridTemplate } from "components/GridTemplate/GridTemplate";
 import { UserActionList } from 'components/UserActionsList/UserActionList';
+import { NoItem } from "components/NoItem/NoItem";
 
 import css from './FavoritesPage.module.css';
 import axios from "axios";
@@ -14,7 +15,7 @@ const FavoritesPage = () => {
   const API_KEY = "live_7Rzkwjrh3OQ8HzQ07RaEAqL8UQr3UfdtzTp9O9T9vVaFIktzDSMnFjrOtFmrW5R8";
   axios.defaults.headers.common['x-api-key'] = API_KEY;
 
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     getFavourites()
@@ -23,7 +24,7 @@ const FavoritesPage = () => {
   const getFavourites = async () => {
     try{   
       let query_params = {
-        limit: 5,     
+        limit: 100,     
       }
       let response = await axios.get('/favourites', { params: query_params }) 
       let result = response.data;
@@ -37,7 +38,7 @@ const FavoritesPage = () => {
   return (
     <div className={css.favPage}>
 
-      <NavBlock />
+      <TopLinksBlock />
       
       <div className={css.favPage__wrapper}>
       
@@ -62,9 +63,11 @@ const FavoritesPage = () => {
           </div>
         </div>
 
-        {images && <GridTemplate list={images} isGallery={false} isAction={true} />}
+        {images.length === 0 && <NoItem/>}
 
-        <div className={css.favPage_historyBlock}>
+        {images && <GridTemplate list={images.slice(0, 5)} isGallery={false} isAction={true} limit={20} />}
+
+        <div className={css.favPage__historyBlock}>
           {images && <UserActionList actions={images}/>}
         </div>
         

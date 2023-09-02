@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { NavBlock } from "components/NavBlock/NavBlock";
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { GridTemplate } from "components/GridTemplate/GridTemplate";
+import { NoItem } from "components/NoItem/NoItem";
 
 import css from './LikesPage.module.css';
 import axios from "axios";
@@ -13,19 +14,15 @@ const LikesPage = () => {
   const API_KEY = "live_7Rzkwjrh3OQ8HzQ07RaEAqL8UQr3UfdtzTp9O9T9vVaFIktzDSMnFjrOtFmrW5R8";
   axios.defaults.headers.common['x-api-key'] = API_KEY;
 
-  const [votes, setVotes] = useState();
+  const [votes, setVotes] = useState([]);
 
   useEffect(() => {
-    getVotesResult();
-    
-  }, [])
-
-  const getVotesResult = async () => {
+    const getVotesResult = async () => {
     try{   
 
       let response = await axios.get('/votes',
         {
-          params: { limit: 20 }
+          params: { limit: 100 }
         }) 
       
       let result = response.data;
@@ -34,19 +31,24 @@ const LikesPage = () => {
     } catch (error) {
       console.log(error)
     }
-  }; 
+    }; 
+    
+    getVotesResult();
+    
+  }, [])
+
 
   const filterVotes = (array) => {
     let filtered = array.filter((item) => item.value === 1)
     return (
-      <GridTemplate list={filtered} isGallery={false} isAction={true}/>
+      <GridTemplate list={filtered.slice(0, 20)} isGallery={false} isAction={true} limit={20} />
     )
   }
 
   return (
     <div className={css.likes}>
 
-      <NavBlock />
+      <TopLinksBlock />
       
       <div className={css.likes__wrapper}>
       
@@ -70,6 +72,8 @@ const LikesPage = () => {
             LIKES 
           </div>         
         </div>
+
+        {votes.length === 0 && <NoItem/>}
 
     {votes && filterVotes(votes)}  
         

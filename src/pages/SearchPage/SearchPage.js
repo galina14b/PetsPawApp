@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import css from "./SearchPage.module.css";
 import axios from "axios";
 
-import { NavBlock } from "components/NavBlock/NavBlock";
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { GridTemplate } from "components/GridTemplate/GridTemplate";
+import { NoItem } from "components/NoItem/NoItem";
 
 
 const SearchPage = () => {
@@ -15,7 +16,7 @@ const SearchPage = () => {
   const API_KEY = "live_7Rzkwjrh3OQ8HzQ07RaEAqL8UQr3UfdtzTp9O9T9vVaFIktzDSMnFjrOtFmrW5R8";
   axios.defaults.headers.common['x-api-key'] = API_KEY;
 
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
   const { value } = useParams();
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const SearchPage = () => {
     try {
        const response = await axios.get('/images/search',
        {
-         params: { limit: 10, breed_ids: selectedValue }
+         params: { limit: 20, breed_ids: selectedValue }
         });
       
        setImages(response.data);
@@ -63,7 +64,7 @@ const SearchPage = () => {
   return (
     <div className={css.searchPage}>
 
-      <NavBlock />
+      <TopLinksBlock />
       
       <div className={css.searchPage__wrapper}>
       
@@ -90,7 +91,9 @@ const SearchPage = () => {
 
         <h6 className={css.searchPage__title}>Search results for: <span>{ value}</span></h6>
 
-          {images && <GridTemplate list={images} isGallery={false} isAction={false} />}
+        {images.length === 0 && <NoItem/>}
+
+        {images && <GridTemplate list={images} isGallery={false} isAction={false} limit={20} />}
 
       </div>
     </div>

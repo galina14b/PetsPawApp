@@ -1,9 +1,16 @@
+import { useState, useEffect } from "react";
 import css from './UserActionList.module.css';
 
 export const UserActionList = ({ actions }) => {
+  const [sortedActions, setSortedActions] = useState();
+
+  useEffect(() => {
+    let updatedList = actions.sort(compare)
+    setSortedActions(updatedList.slice(0, 5));
+  }, [actions])
 
   // Makes time value for the list
-  function getTime(timeData) {
+  function gettingTime(timeData) {
     let date = new Date(timeData);
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -16,14 +23,11 @@ export const UserActionList = ({ actions }) => {
 
   // Sorts items according to their time
   function compare(a, b) {
-      let dateA = new Date(a.created_at).getTime();
-      let dateB = new Date(b.created_at).getTime();
-
-      return dateB - dateA;
+    let dateA = new Date(a.created_at).getTime();
+    let dateB = new Date(b.created_at).getTime();
+    return dateB - dateA;
   }
   
-  let sortedActions = actions.sort(compare);
-
   return (
     <ul className={css.userActions__list}>
       
@@ -34,7 +38,7 @@ export const UserActionList = ({ actions }) => {
           return (
           <li key={item.id} className={css.userActions__item}>
             <div className={css.userActions__wrapper}>
-              <div className={css.userActions__time}>{getTime(item.created_at)}</div>
+              <div className={css.userActions__time}>{gettingTime(item.created_at)}</div>
               <p className={css.userActions__text}>Image ID: <b>{item.image_id}</b> was added to Likes</p>
               <div className={css.userActions__likes}></div>
             </div>
@@ -45,7 +49,7 @@ export const UserActionList = ({ actions }) => {
           return (
           <li key={item.id} className={css.userActions__item}>
             <div className={css.userActions__wrapper}>
-              <div className={css.userActions__time}>{getTime(item.created_at)}</div>
+              <div className={css.userActions__time}>{gettingTime(item.created_at)}</div>
               <p className={css.userActions__text}>Image ID: <b>{item.image_id}</b> was added to Dislikes</p>
               <div className={css.userActions__dislikes}></div>
             </div>
@@ -57,7 +61,7 @@ export const UserActionList = ({ actions }) => {
           return (
           <li key={item.id} className={css.userActions__item}>
             <div className={css.userActions__wrapper}>
-              <div className={css.userActions__time}>{getTime(item.created_at)}</div>
+              <div className={css.userActions__time}>{gettingTime(item.created_at)}</div>
               <p className={css.userActions__text}>Image ID: <b>{item.image_id}</b> was added to Favourites</p>
               <div className={css.userActions__favourite}></div>
             </div>

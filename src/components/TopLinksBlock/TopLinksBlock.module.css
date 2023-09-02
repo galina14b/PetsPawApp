@@ -1,0 +1,173 @@
+.topLinksBlock {
+  width: 680px;
+}
+
+.topLinksBlock__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions__form {
+  position: relative;
+  width: 470px;
+  height: 60px;
+}
+
+.actions__input {
+  width: 462px;
+  height: 56px;
+  border-radius: 20px;
+  background: #FFF;
+  border: 2px solid transparent;
+  color: #1D1D1D;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.actions__input:hover {
+  border: 2px solid #FBE0DC;
+}
+
+.actions__input:active,
+.actions__input:focus {
+  outline: 2px solid #FF868E;
+}
+
+.actions__input::placeholder {
+  padding: 15px 20px;
+  color: #8C8C8C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.actions__submitBtn {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(100% - 50px);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #FBE0DC;
+}
+
+.actions__submitBtn:hover {
+  background: #FF868E;
+  cursor: pointer;
+}
+
+.actions__submitBtn svg {
+  fill: #FF868E;
+}
+
+.actions__submitBtn:hover svg {
+  fill: #FFF;
+}
+
+.actions__navLink {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.actions__navLink svg {
+  fill: #FF868E;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.actions__navLink:hover {
+  background: #FBE0DC;
+}
+
+.actions__navLink_heart svg {
+  top: calc(50% - (26px/2));
+}
+
+@media all and (max-width: 1025px) {
+  .topLinksBlock {
+    width: 520px;
+  }
+
+  .actions__form {
+    width: 330px;
+  }
+
+  .actions__input {
+    width: 322px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .topLinksBlock {
+    width: 728px;
+  }
+  .actions__form {
+    width: 500px;
+  }
+
+  .actions__input {
+    width: 492px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .topLinksBlock {
+    width: 405px;
+  }
+
+  .topLinksBlock__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .actions__form {
+    width: 405px;
+    margin-bottom: 20px;
+  }
+
+  .actions__input {
+    width: 395px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .topLinksBlock {
+    width: 356px;
+  }
+
+  .actions__form {
+    width: 356px;
+  }
+
+  .actions__input {
+    width: 348px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .topLinksBlock {
+    width: 300px;
+  }
+
+  .actions__form {
+    width: 300px;
+  }
+
+  .actions__input {
+    width: 292px;
+  }
+
+  .actions__input::placeholder {
+    padding: 15px 10px;
+    font-size: 16px;
+  }
+}

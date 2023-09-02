@@ -6,7 +6,7 @@
   position: relative;
   margin-top: 10px;
   padding: 20px;
-  width: 680px;
+  width: 640px;
   border-radius: 20px;
   background: #FFF;
 }
@@ -61,8 +61,47 @@
   letter-spacing: 2px;
 }
 
-.favPage_historyBlock {
+.favPage__historyBlock {
   margin-top: 40px;
   position: relative;
   bottom: 180px;
+}
+
+@media all and (max-width: 1024px) {
+  .favPage__wrapper {
+    width: 480px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .favPage {
+    margin-top: 80px;
+  }
+
+  .favPage__wrapper {
+    width: 688px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .favPage__wrapper {
+    padding: 20px 10px;
+    width: 385px;
+  }
+
+  .favPage__historyBlock {
+    bottom: 0;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .favPage__wrapper {
+    width: 336px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .favPage__wrapper {
+    width: 280px;
+  }
 }

@@ -1,17 +1,9 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 
 import css from './LayOut.module.css';
-import styled from "styled-components";
-
-const StyledLink = styled(NavLink)`
-
-  &.active {
-    color: #FF868E;
-  }
-  
-`;
-
+import { StyledLayOutLink, StyledLayOutImage } from '../StyledComponents/StyledComponents';
+import { Spinner } from "components/Spinner/Spinner";
 
 const Layout = () => {
   return (
@@ -37,55 +29,39 @@ const Layout = () => {
 
           </div>
 
+          
           <h1 className={css.welcome__title}>Hi!👋</h1>
-          <p className={css.welcome__text}>Welcome to MacPaw Bootcamp 2023</p>
+          <p className={css.welcome__text}>Welcome to PestPaw!</p>
+          <h3 className={css.welcome__subtitle}>Lets start using The Cat App</h3>
 
-          <h3 className={css.welcome__subtitle}>Lets start using The Cat API</h3>
+
+
           <div className={css.welcome__options}>
-
             <div className={css.options__item}>
-              <div className={css.options__voting}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/voting">
-                  <div className={css.options__imageBlock}>
-                    <div className={css.options__imageFrame + ' ' + css.options__image_votingFrame}>
-                      <div className={css.options__image_voting}></div>
-                    </div>
-                  </div>
-                  <div className={css.options__link}><span>VOTING</span></div>
-                </StyledLink>
-              </div>
+              <StyledLayOutImage aria-current="page" to="/voting" className={css.options__voting + ' ' + css.options__imageFrame}></StyledLayOutImage> 
+              <StyledLayOutLink className={css.options__navLink} aria-current="page" to="/voting">
+                VOTING
+              </StyledLayOutLink>
             </div>
 
             <div className={css.options__item}>
-              <div className={css.options__breeds}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/breeds">
-                  <div className={css.options__imageBlock}>
-                    <div className={css.options__imageFrame + ' ' + css.options__image_breedsFrame}>
-                      <div className={css.options__image_breeds}></div>
-                    </div>
-                  </div>
-                  <div className={css.options__link}><span>BREEDS</span></div>
-                </StyledLink>
-              </div>
+              <StyledLayOutImage aria-current="page" to="/breeds" className={css.options__breeds + ' ' + css.options__imageFrame}></StyledLayOutImage>              
+              <StyledLayOutLink className={css.options__navLink} aria-current="page" to="/breeds">
+                BREEDS
+              </StyledLayOutLink>
             </div>
 
             <div className={css.options__item}>
-              <div className={css.options__gallery}>
-                <StyledLink className={css.options__navLink} aria-current="page" to="/gallery">
-                  <div className={css.options__imageBlock}>
-                    <div className={css.options__imageFrame + ' ' + css.options__image_galleryFrame}>
-                      <div className={css.options__image_gallery}></div>
-                    </div>
-                  </div>
-                  <div className={css.options__link}><span>GALLERY</span></div>
-                </StyledLink>
-              </div>
+              <StyledLayOutImage aria-current="page" to="/gallery" className={css.options__gallery + ' ' + css.options__imageFrame}></StyledLayOutImage>              
+              <StyledLayOutLink className={css.options__navLink} aria-current="page" to="/gallery">
+                GALLERY
+              </StyledLayOutLink>
             </div>
-
           </div>
         </div>
           
-        <Suspense fallback={<div>Loading...</div>}>
+        
+        <Suspense fallback={<Spinner/>}>
           <Outlet />
         </Suspense>
       </div>

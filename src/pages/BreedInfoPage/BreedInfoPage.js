@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import css from './BreedInfoPage.module.css';
 import axios from "axios";
 
-import { Slider } from "components/Slider/Slider";
+import { Carousel } from "components/Carousel/Carousel";
 import { DescriptionBlock } from "components/DescriptionsBlock/DescriptionBlock";
-import Glide from '@glidejs/glide';
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 
 
 const BreedInfoPage = () => {
@@ -41,30 +41,15 @@ const BreedInfoPage = () => {
 
     getBreedInfo();
 
-    // const glide = new Glide('.glide', {
-    // type: 'carousel',
-    // focusAt: 'center',
-    // perView: 1,
-        
-    // autoplay: 4000,
-    // });
+  }, [breedID])
 
-    // glide.mount()
-
-  //   if (breedImages) {
-  //     new Glide('.glide', {
-  // type: 'carousel',
-  // focusAt: 'center',
-  // perView: 1,
-  
-  // autoplay: 4000,
-  // }).mount();
-  //   }
-
-  }, [])
-  
   return (
+  
+      
     <div className={css.breedsInfoPage}>
+        
+      <TopLinksBlock/>
+
       <div className={css.breedsInfoPage__wrapper}>
 
         <div className={css.breedsInfoPage__navigationBlock}>
@@ -94,15 +79,17 @@ const BreedInfoPage = () => {
 
         <div className={css.breedsInfoPage__imageBlock}>
           <div className={css.glide}>
-            {breedImages && <Slider list={breedImages} />}
+            {breedImages && <Carousel list={breedImages} />}
           </div>
         </div>
 
         {breedInfo && <div className={css.breedsInfoPage__info}>
           <DescriptionBlock breedInfo={breedInfo}/>    
-        </div>}        
+        </div>}
+        
       </div>
     </div>
+    
   )
 }
 

@@ -4,10 +4,11 @@ const DescriptionBlock = ({breedInfo}) => {
   return (
     <>
       <div className={css.info__frame}>
-        <div className={css.info__title}>
-          <h3>{breedInfo.name}</h3>
-        </div>
+        <h3 className={css.info__title}>
+          {breedInfo.name}
+        </h3>
         <h6 className={css.info__subtitle}>{breedInfo.description}</h6>
+        
             
         <div className={css.info__flex}>
           <div className={css.info__item}>

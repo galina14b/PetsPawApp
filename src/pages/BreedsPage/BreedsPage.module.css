@@ -136,3 +136,77 @@
   fill: #FF868E;
 }
 
+@media all and (max-width: 1024px) {
+  .breedsPage {
+    width: 520px;
+  }
+
+  .selectBreed {
+    width: 120px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .breedsPage {
+    margin-top: 80px;
+    width: 728px;
+  }
+
+    .selectBreed {
+      width: 226px;
+    }
+}
+
+@media all and (max-width: 426px) {
+  .breedsPage {
+    width: 405px;
+  }
+
+  .breedsPage__wrapper {
+    padding: 20px 10px;
+  }
+
+  .breedsPage__navigationBlock {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .breedsPage__backLinkBlock {
+    margin-bottom: 10px;
+  }
+
+  .breedsPage__nameOfPage {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .selectBreed {
+    width: 205px;
+    margin-right: 15px;
+  }
+
+  .breedsPage__selectLimit {
+    margin-right: 15px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .breedsPage {
+    width: 356px;
+  }
+
+  .selectBreed {
+    width: 160px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .breedsPage {
+    width: 300px;
+  }
+
+  .selectBreed {
+    width: 280px;
+    margin-bottom: 10px;
+  }
+}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import css from './GridTemplate.module.css';
 
-const GridTemplate = ({ list, isGallery, isAction }) => {
+const GridTemplate = ({ list, isGallery, isAction, limit }) => {
 
   const location = useLocation();
   const [sub_id] = useState('user_175');
@@ -24,7 +24,7 @@ const GridTemplate = ({ list, isGallery, isAction }) => {
 
   return (
     <>
-      {!isGallery && !isAction && <div className={css.gridContainer}>
+      {!isGallery && !isAction && <div className={css.gridContainer + ' ' + css[`gridCapacity_${limit}`]}>
         {list.map(item => {
           return (
             <div key={item.id} className={css.gridItem} >
@@ -34,7 +34,7 @@ const GridTemplate = ({ list, isGallery, isAction }) => {
         })}
       </div>}
       
-      {isGallery && <div className={css.gridContainer}>
+      {isGallery && <div className={css.gridContainer + ' ' + css[`gridCapacity_${limit}`]}>
         {list.map(item => {
           return (
             <div key={item.id} className={css.gridItem} >
@@ -49,7 +49,7 @@ const GridTemplate = ({ list, isGallery, isAction }) => {
         }
         </div>}
       
-      {isAction && !isGallery && <div className={css.gridContainer}>
+      {isAction && !isGallery && <div className={css.gridContainer + ' ' + css[`gridCapacity_${limit}`]}>
         {list.map(item => {
           return (
             <div key={item.id} className={css.gridItem} >

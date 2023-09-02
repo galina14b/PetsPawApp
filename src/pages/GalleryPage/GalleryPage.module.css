@@ -1,5 +1,6 @@
 .galleryPage {
   height: 100vh;
+  width: 680px;
 }
 
 .galleryPage__wrapper {
@@ -47,7 +48,6 @@
 .galleryPage__nameOfPage {
   margin-left: 10px;
   width: 146px;
-  padding: 0 30px;
   height: 40px;
   border-radius: 10px;
   background: #FF868E;
@@ -94,7 +94,6 @@
 .selectBlock {
   margin-top: 20px;
   padding: 0 20px 20px;
-  width: 640px;
   height: 156px;
   border-radius: 20px;
   background: #F8F8F7;
@@ -210,3 +209,98 @@
   fill: #FFF;
 }
 
+@media all and (max-width: 1025px) {
+  .galleryPage {
+    width: 520px;
+  }
+
+  .selectOrder, .selectType {
+    width: 200px;
+  }
+
+  .selectBreed, .selectLimit {
+    width: 180px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .galleryPage {
+    margin-top: 80px;
+    width: 728px;
+  }
+
+    .selectOrder,
+    .selectType {
+      width: 290px;
+    }
+  
+    .selectBreed {
+      width: 290px;
+    }
+
+    .selectLimit {
+      width: 240px;
+    }
+}
+
+@media all and (max-width: 426px) {
+  .galleryPage {
+    width: 405px;
+  }
+
+  .selectBlock {
+    height: fit-content;
+  }
+
+    .selectOrder,
+    .selectType {
+      width: 150px;
+    }
+  
+    .selectBlock__item:nth-of-type(2) {
+      flex-wrap: wrap;
+    }
+}
+
+@media all and (max-width: 376px) {
+  .galleryPage {
+    width: 356px;
+  }
+
+  .galleryPage__navigationBlock {
+    flex-wrap: wrap;
+  }
+
+  .upload {
+    margin: 10px 0 0;
+  }
+
+  .selectBlock__item {
+    flex-wrap: wrap;
+  }
+
+    .selectOrder,
+    .selectType,
+    .selectBreed,
+    .selectLimit {
+      width: 270px;
+      margin-bottom: 5px;
+    }
+}
+
+@media all and (max-width: 320px) {
+  .galleryPage {
+    width: 300px;
+  }
+
+  .selectBlock {
+    padding: 10px;
+  }
+
+    .selectOrder,
+    .selectType,
+    .selectBreed,
+    .selectLimit {
+      width: 240px;
+    }
+}

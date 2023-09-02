@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import css from './GalleryPage.module.css';
 import axios from "axios";
 
-import { NavBlock } from 'components/NavBlock/NavBlock';
+import { TopLinksBlock } from 'components/TopLinksBlock/TopLinksBlock';
 import { GridTemplate } from 'components/GridTemplate/GridTemplate';
 import {Modal} from 'components/Modal/Modal';
 
@@ -38,32 +38,22 @@ const GalleryPage = () => {
     }
     getSelectOptions();
 
-    const getFirstImages = async (selectedValue, orderValue, pageValue, mime_typesValue) => {
-    if (selectedValue === '') {
+    const getFirstImages = async () => {
       try {
           let response = await axios.get('/images/search',
         {
-          params: { limit: page, order: orderValue, page: pageValue, mime_types: mime_typesValue}
+          params: { limit: 5, order: 'RAND', page: 5, mime_types: 'jpg,png,gif'}
         });
         setImages(response.data);
         } catch (error) {
           console.error(error)
         }
-    } else {
-      let response = await axios.get('/images/search',
-        {
-          params:
-          {
-            limit: page, breed_ids: selectedValue, order: orderValue, page: pageValue, mime_types: mime_typesValue
-          }
-        });
-      setImages(response.data);
-    }
+    
   }
     
-    getFirstImages('', order, page, type);
+    getFirstImages();
 
-  }, [order, page, type]);
+  }, []);
 
   const getImages = async (selectedValue, orderValue, pageValue, mime_typesValue) => {
     if (selectedValue === '') {
@@ -95,7 +85,7 @@ const GalleryPage = () => {
 
   return (
     <div className={css.galleryPage}>
-      <NavBlock/>
+      <TopLinksBlock/>
       <div className={css.galleryPage__wrapper}>
 
         <div className={css.galleryPage__navigationBlock}>
@@ -186,7 +176,7 @@ const GalleryPage = () => {
         </div>
         </form>
 
-        {images && <GridTemplate list={images} isGallery={true} />}
+        {images && <GridTemplate list={images} isGallery={true} isAction={false} limit={page} />}
 
       </div>
     </div>

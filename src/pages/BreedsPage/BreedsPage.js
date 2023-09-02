@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import css from "./BreedsPage.module.css";
 
-import { NavBlock } from "components/NavBlock/NavBlock";
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { GridTemplate } from "components/GridTemplate/GridTemplate";
 
 
@@ -22,7 +22,7 @@ const BreedsPage = () => {
   const [images, setImages] = useState();
   const [selectOptions, setSelectOptions] = useState();
   const [limit, setLimit] = useState(10);
-  const [toSort, setToSort] = useState();
+  const [sorted, setSorted] = useState();
 
   useEffect(() => {
 
@@ -40,14 +40,9 @@ const BreedsPage = () => {
   }, []);
 
   useEffect(() => {
-    if (toSort === 'sortUp') {
-      let result = sortingFromZtoA(images);
-      setImages(result)
-    } else if (toSort === 'sortDown') {
-      let result = sortingFromAtoZ(images);
-      setImages(result)
-    }
-  }, [toSort])
+
+    setImages(sorted);
+  }, [sorted]);
 
   const getImages = async (selectedValue, limitValue) => {
     if (selectedValue === '') {
@@ -73,7 +68,6 @@ const BreedsPage = () => {
   const handleBreedSelection = async (event) => {
     let select = event.target.value;
     setSelectedId(select);
-    console.log(select)
     if (select === 'all') {
       await getImages('', limit)
     } else {
@@ -91,20 +85,19 @@ const BreedsPage = () => {
     }
   }
 
-  const sortingFromAtoZ = (array) => {
-    let result = array.sort();
-    return(result)
+  const sorting = async (array) => {
+    let result = await array.slice().sort(byField('breeds[0].name'));
+    setSorted(result);
   }
 
-  const sortingFromZtoA = (array) => {
-    let result = (array.sort().reverse());
-    return(result)
+  function byField(fieldName){
+  return (a, b) => a[fieldName] - b[fieldName] ? 1 : -1;
   }
 
   return (
     <>
       <div className={css.breedsPage}>
-        <NavBlock/>
+        <TopLinksBlock/>
 
         <div className={css.breedsPage__wrapper}>
 
@@ -148,20 +141,14 @@ const BreedsPage = () => {
               </select>
             </div>
 
-            <div className={css.sortIcon} onClick={() => setToSort('sortUp')}>
-              <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M4 0.195262C4.26035 -0.0650874 4.68246 -0.0650874 4.94281 0.195262L8.94281 4.19526L8 5.13807L5.13807 2.27614V20H3.80474V2.27614L0.942809 5.13807L0 4.19526L4 0.195262ZM15.1381 1.33333C14.0335 1.33333 13.1381 2.22876 13.1381 3.33333V5.33333H17.1381V3.33333C17.1381 2.22876 16.2426 1.33333 15.1381 1.33333ZM17.1381 6.66667V9.33333H18.4714V3.33333C18.4714 1.49238 16.979 9.93411e-09 15.1381 9.93411e-09C13.2971 9.93411e-09 11.8047 1.49238 11.8047 3.33333V9.33333H13.1381V6.66667H17.1381ZM11.8047 10.6667H15.8047C17.2775 10.6667 18.4714 11.8606 18.4714 13.3333C18.4714 14.1298 18.1222 14.8447 17.5686 15.3333C18.1222 15.822 18.4714 16.5369 18.4714 17.3333C18.4714 18.8061 17.2775 20 15.8047 20H11.8047V10.6667ZM15.8047 14.6667C16.5411 14.6667 17.1381 14.0697 17.1381 13.3333C17.1381 12.597 16.5411 12 15.8047 12H13.1381V14.6667H15.8047ZM13.1381 16H15.8047C16.5411 16 17.1381 16.597 17.1381 17.3333C17.1381 18.0697 16.5411 18.6667 15.8047 18.6667H13.1381V16Z" fill=""/>
-              </svg>
-            </div>
-
-            <div className={css.sortIcon} onClick={() => setToSort('sortDown')}>
+            <div className={css.sortIcon} onClick={() => sorting(images)}>
               <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M3.80474 17.7239V0H5.13807V17.7239L8 14.8619L8.94281 15.8047L4.94281 19.8047C4.81778 19.9298 4.64822 20 4.4714 20C4.29459 20 4.12502 19.9298 4 19.8047L0 15.8047L0.942809 14.8619L3.80474 17.7239ZM15.1381 1.33333C14.0335 1.33333 13.1381 2.22876 13.1381 3.33333V5.33333H17.1381V3.33333C17.1381 2.22876 16.2426 1.33333 15.1381 1.33333ZM17.1381 6.66667V9.33333H18.4714V3.33333C18.4714 1.49238 16.979 0 15.1381 0C13.2971 0 11.8047 1.49238 11.8047 3.33333V9.33333H13.1381V6.66667H17.1381ZM11.8047 10.6667H15.8047C17.2775 10.6667 18.4714 11.8606 18.4714 13.3333C18.4714 14.1298 18.1222 14.8447 17.5686 15.3333C18.1222 15.822 18.4714 16.5369 18.4714 17.3333C18.4714 18.8061 17.2775 20 15.8047 20H11.8047V10.6667ZM15.8047 14.6667C16.5411 14.6667 17.1381 14.0697 17.1381 13.3333C17.1381 12.597 16.5411 12 15.8047 12H13.1381V14.6667H15.8047ZM13.1381 16H15.8047C16.5411 16 17.1381 16.597 17.1381 17.3333C17.1381 18.0697 16.5411 18.6667 15.8047 18.6667H13.1381V16Z" fill=""/>
               </svg>
             </div>
           </div>
               
-          {images && <GridTemplate list={images} isGallery={false} />} 
+          {images && <GridTemplate list={images} isGallery={false} isAction={false} limit={limit} />} 
               
         </div>
       </div>

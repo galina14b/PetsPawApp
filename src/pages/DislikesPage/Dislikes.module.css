@@ -6,7 +6,7 @@
   position: relative;
   margin-top: 10px;
   padding: 20px;
-  width: 680px;
+  width: 640px;
   border-radius: 20px;
   background: #FFF;
 }
@@ -59,4 +59,39 @@
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 2px;
+}
+
+@media all and (max-width: 1024px) {
+  .dislikes__wrapper {
+    width: 480px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .dislikes {
+    margin-top: 80px;
+  }
+
+  .dislikes__wrapper {
+    width: 688px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .dislikes__wrapper {
+    padding: 20px 10px;
+    width: 385px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .dislikes__wrapper {
+    width: 336px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .dislikes__wrapper {
+    width: 280px;
+  }
 }

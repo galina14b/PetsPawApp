@@ -1,0 +1,18 @@
+.noitem {
+  margin-top: 20px;
+  padding: 18px 20px;
+  width: calc(100% - 40px);
+  height: 24px;
+  border-radius: 10px;
+  background: #F8F8F7;
+  color: #8C8C8C;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.noitem p {
+  margin: 0;
+}

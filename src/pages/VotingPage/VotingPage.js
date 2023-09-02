@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import css from './VotingPage.module.css';
 
-import { NavBlock } from "components/NavBlock/NavBlock";
+import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { UserActionList } from "components/UserActionsList/UserActionList";
 import { Options } from "components/Options/Options";
 
@@ -15,7 +15,6 @@ const VotingPage = () => {
   const [cat, setCat] = useState();
   const [votes, setVotes] = useState();
   const [favourites, setFavourites] = useState();
-  const [sub_id] = useState('user_175');
 
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? "/");
@@ -30,6 +29,7 @@ const VotingPage = () => {
     getFavourites();
   }, []);
 
+  // Functions for getting votes, images from api
   const getRandomImage = async () => {
     try {
       axios.defaults.headers.common['x-api-key'] = API_KEY;
@@ -48,7 +48,7 @@ const VotingPage = () => {
   const getVotesResult = async () => {
     let response = await axios.get('/votes',
       {
-        params: { limit: 3 }
+        params: { limit: 100 }
       });
     
     response.data.forEach(element => {
@@ -58,35 +58,52 @@ const VotingPage = () => {
     setVotes(response.data);
   }; 
 
+  const getFavourites = async () => {
+    try{   
+      let query_params = {
+        limit: 100
+      }
+      let response = await axios.get('/favourites', { params: query_params }) 
+      let result = response.data;
+      setFavourites(result);
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  
+  // Functions for voting
   const voteLike = async () => {
     let body = {
       image_id: cat.id,
-      sub_id: sub_id,
+      sub_id: 'user_175',
       value: 1 
     }
 
     await axios.post('/votes', body) 
     getRandomImage();
     getVotesResult();
+    getFavourites();
   }
 
   const voteDislike = async () => {
     let body = {
       image_id: cat.id,
-      sub_id: sub_id,
+      sub_id: 'user_175',
       value: 0 
     }
     
     await axios.post('/votes', body )
     getRandomImage();
     getVotesResult();
+    getFavourites();
   }
   
   const addToFavourites = async () => {
     try{
       let post_body = {
         image_id: cat.id,
-        sub_id: sub_id
+        sub_id: 'user_175'
       }
       await axios.post('/favourites', post_body);
       getRandomImage();
@@ -97,25 +114,14 @@ const VotingPage = () => {
     }
   }
 
-  const getFavourites = async () => {
-    try{   
-      let query_params = {
-        limit: 3
-      }
-      let response = await axios.get('/favourites', { params: query_params }) 
-      let result = response.data;
-      setFavourites(result);
-    }catch(error){
-      console.log(error)
-    }
-  }
   
   
   return (
     <div className={css.votingPage}>
-      <NavBlock/>
+      <TopLinksBlock/>
       <div className={css.votingPage__wrapper}>
 
+        
         <div className={css.votingPage__navigationBlock}>
           <div className={css.votingPage__backLinkBlock}>
             <Link to={backLinkHref.current} className={css.votingPage__backLink}>
@@ -138,12 +144,15 @@ const VotingPage = () => {
 
         </div>
 
+        
         {cat && <img className={css.votingPage__imageBlock} src={cat.url} alt="cat" />}
 
+        
         <div className={css.votingPage__options}>
           <Options voteLike={voteLike} voteDislike={voteDislike} addToFavourites={addToFavourites} />
         </div>
 
+        
         {votes && favourites && <div className={css.votingPage__userActions}>
           <UserActionList actions={[...votes, ...favourites]}/>
         </div>

@@ -1,0 +1,22 @@
+.errorPage {
+  margin-top: 70px;
+  display: flex;
+  height: fit-content;
+  width: 640px;
+  padding: 0 20px;
+  align-items: center;
+  border-radius: 10px;
+  background: #FFF;
+}
+
+.errorPage svg {
+  margin-right: 10px;
+}
+
+.errorPage p {
+  color: #8C8C8C;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}

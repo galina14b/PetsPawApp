@@ -6,7 +6,7 @@
   position: relative;
   margin-top: 10px;
   padding: 20px;
-  width: 680px;
+  width: 640px;
   border-radius: 20px;
   background: #FFF;
 }
@@ -61,3 +61,36 @@
   letter-spacing: 2px;
 }
 
+@media all and (max-width: 1024px) {
+  .likes__wrapper {
+    width: 480px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .likes {
+    margin-top: 80px;
+  }
+  .likes__wrapper {
+    width: 688px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .likes__wrapper {
+    padding: 20px 10px;
+    width: 385px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .likes__wrapper {
+    width: 336px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .likes__wrapper {
+    width: 280px;
+  }
+}

@@ -5,7 +5,7 @@
 .searchPage__wrapper {
   margin-top: 10px;
   padding: 20px;
-  width: 680px;
+  width: 640px;
   border-radius: 20px;
   background: #FFF;
 }
@@ -74,4 +74,39 @@
   color: #1D1D1D;
   font-weight: 500;
   line-height: normal;
+}
+
+@media all and (max-width: 1024px) {
+  .searchPage__wrapper {
+    width: 480px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .searchPage {
+    margin-top: 80px;
+  }
+
+  .searchPage__wrapper {
+    width: 688px;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .searchPage__wrapper {
+    padding: 20px 10px;
+    width: 385px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  .searchPage__wrapper {
+    width: 336px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .searchPage__wrapper {
+    width: 280px;
+  }
 }
