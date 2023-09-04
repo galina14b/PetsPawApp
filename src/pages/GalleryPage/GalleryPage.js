@@ -121,6 +121,7 @@ const GalleryPage = () => {
 
         <form onSubmit={upDatingImages}>
           <div className={css.selectBlock}>
+
           <div className={css.selectBlock__item}>
             <div className={css.selectBlock__wrapper}>
                 
@@ -141,9 +142,8 @@ const GalleryPage = () => {
               </select>
             </div>
           </div>
-
             
-            <div className={css.selectBlock__item}>
+          <div className={css.selectBlock__item}>
 
               {selectOptions && <div className={css.selectBlock__wrapper}>
                 <h6>Breed</h6>
@@ -157,15 +157,15 @@ const GalleryPage = () => {
               </div>}
             
 
-            <div className={css.selectBlock__wrapper}>
-              <h6>Limit</h6>
-              <select className={css.selectLimit} onChange={(e) => setPage(e.target.value)}>              
+              <div className={css.selectBlock__wrapper}>
+                <h6>Limit</h6>
+                <select className={css.selectLimit} onChange={(e) => setPage(e.target.value)}>              
                 <option value="5">5 items per page</option>
                 <option value="10">10 items per page</option>
                 <option value="15">15 items per page</option>
                 <option value="20">20 items per page</option>
-              </select>
-            </div>
+                </select>
+              </div>
 
             <button type='submit' className={css.loadBtn}>
               <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">

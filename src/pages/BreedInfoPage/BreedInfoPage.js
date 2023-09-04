@@ -6,7 +6,7 @@ import css from './BreedInfoPage.module.css';
 import axios from "axios";
 
 import { Carousel } from "components/Carousel/Carousel";
-import { DescriptionBlock } from "components/DescriptionsBlock/DescriptionBlock";
+import { DescriptionBlock } from "components/DescriptionBlock/DescriptionBlock";
 import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 
 
@@ -44,7 +44,6 @@ const BreedInfoPage = () => {
   }, [breedID])
 
   return (
-  
       
     <div className={css.breedsInfoPage}>
         

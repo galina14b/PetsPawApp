@@ -34,7 +34,7 @@ const GridTemplate = ({ list, isGallery, isAction, limit }) => {
         })}
       </div>}
       
-      {isGallery && <div className={css.gridContainer + ' ' + css[`gridCapacity_${limit}`]}>
+      {isGallery && !isAction && <div className={css.gridContainer + ' ' + css[`gridCapacity_${limit}`]}>
         {list.map(item => {
           return (
             <div key={item.id} className={css.gridItem} >

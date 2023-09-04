@@ -37,7 +37,7 @@ const DisikesPage = () => {
   const filterVotes = (array) => {
     let filtered = array.filter((item) => item.value === 0)
     return (
-      <GridTemplate list={filtered.slice(0, 5)} isGallery={false} isAction={true} limit={20} />
+      <GridTemplate list={filtered.slice(0, 20)} isGallery={false} isAction={true} limit={20} />
     )
   }
 

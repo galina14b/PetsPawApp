@@ -88,37 +88,28 @@
   margin-top: 52px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1290px) {
   .votingPage {
     width: 520px;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
   .votingPage {
     margin-top: 80px;
     width: 728px;
   }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 750px) {
   .votingPage {
-    width: 405px;
+    margin: 80px auto 0;
+    width: 100%;
   }
+}
 
+@media all and (max-width: 425px) {
   .votingPage__wrapper {
-    margin-top: 20px;
-  }
-}
-
-@media all and (max-width: 376px) {
-  .votingPage {
-    width: 356px;
-  }
-}
-
-@media all and (max-width: 320px) {
-  .votingPage {
-    width: 300px;
+    padding: 20px 10px;
   }
 }

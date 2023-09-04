@@ -151,7 +151,9 @@
   cursor: pointer;
 }
 
-@media all and (max-width: 1024px) {
+/* Breakpoints =========================*/
+
+@media all and (max-width: 1290px) {
   .layout__wrapper {
     padding: 30px 20px;
     max-width: 1004px;
@@ -163,7 +165,7 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
   .layout__wrapper {
     flex-direction: column;
     max-width: 728px;
@@ -178,45 +180,52 @@
   }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 768px) {
   .layout__wrapper {
     padding: 30px 10px;
-    max-width: 406px;
   }
-  .welcome {
-    width: 406px;
-  }
+}
 
-  .welcome__options {
+@media all and (max-width: 729px) {
+  .layout__wrapper {
+    width: calc(100% - 20px)
+  }
+  
+  .welcome {
     width: 100%;
   }
 
+  .welcome__options {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .welcome__options {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 450px) {
   .options__imageFrame {
     width: 110px;
     height: 150px;
   }
-
+  
   .options__navLink {
     width: 118px;
   }
 }
 
-@media all and (max-width: 376px) {
-  .layout__wrapper {
-    max-width: 356px;
-  }
-
-  .welcome {
-    width: 356px;
-  }
-
+@media all and (max-width: 390px) {
   .options__imageFrame {
     width: 90px;
     height: 150px;
   }
 
   .options__navLink {
-    width: 104px;
+    width: 95px;
   }
 
   .options__voting::after,
@@ -227,18 +236,4 @@
   }
 }
 
-@media all and (max-width: 320px) {
-  .layout__wrapper {
-    max-width: 300px;
-  }
-
-  .welcome {
-    width: 300px;
-  }
-
-  .options__navLink {
-    width: 95px;
-  }
-
-}
 

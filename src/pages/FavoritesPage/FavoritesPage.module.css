@@ -67,26 +67,26 @@
   bottom: 180px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1290px) {
   .favPage__wrapper {
     width: 480px;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
   .favPage {
     margin-top: 80px;
   }
 
   .favPage__wrapper {
-    width: 688px;
+    width: calc(100% - 40px);
   }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 425px) {
   .favPage__wrapper {
     padding: 20px 10px;
-    width: 385px;
+    width: calc(100% - 20px);
   }
 
   .favPage__historyBlock {

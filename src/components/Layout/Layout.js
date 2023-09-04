@@ -28,13 +28,10 @@ const Layout = () => {
             </svg>
 
           </div>
-
-          
+        
           <h1 className={css.welcome__title}>Hi!👋</h1>
-          <p className={css.welcome__text}>Welcome to PestPaw!</p>
-          <h3 className={css.welcome__subtitle}>Lets start using The Cat App</h3>
-
-
+          <p className={css.welcome__text}>Welcome to PetsPaw!</p>
+          <h3 className={css.welcome__subtitle}>Lets start using The Cat App.</h3>
 
           <div className={css.welcome__options}>
             <div className={css.options__item}>
@@ -60,7 +57,6 @@ const Layout = () => {
           </div>
         </div>
           
-        
         <Suspense fallback={<Spinner/>}>
           <Outlet />
         </Suspense>

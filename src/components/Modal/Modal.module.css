@@ -1,6 +1,6 @@
 .modal__background {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   left: 0;
   top: 0;
@@ -10,7 +10,7 @@
 
 .modal {
   position: absolute;
-  top: 30px;
+  top: 3vh;
   right: 30px;
   z-index: 999;
   width: 680px;
@@ -87,9 +87,6 @@
     background: #FBE0DC;
 }
 
-.uploader__content {
-}
-
 .uploader__text {
   margin: 145px auto;
   padding: 0 10px;
@@ -118,7 +115,7 @@
   width: 558.14px;
   height: 280px;
   border-radius: 10px;
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .uploader__btn {
@@ -179,12 +176,7 @@
 @media all and (max-width: 768px) {
   .modal {
     right: 10px;
-  }
-}
-
-@media all and (max-width: 426px) {
-  .modal {
-    width: 405px;
+    width: 90%;
   }
 
   .modal__uploader,
@@ -194,10 +186,7 @@
 }
 
 @media all and (max-width: 376px) {
-  .modal {
-    width: 356px;
-  }
-
+  
   .uploader__btn {
     margin-top: 150px;
   }
@@ -207,8 +196,3 @@
   }
 }
 
-@media all and (max-width: 320px) {
-  .modal {
-    width: 300px;
-  }
-}

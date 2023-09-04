@@ -9,7 +9,6 @@ import { TopLinksBlock } from "components/TopLinksBlock/TopLinksBlock";
 import { UserActionList } from "components/UserActionsList/UserActionList";
 import { Options } from "components/Options/Options";
 
-
 const VotingPage = () => {
 
   const [cat, setCat] = useState();
@@ -113,7 +112,6 @@ const VotingPage = () => {
       console.log(error)
     }
   }
-
   
   
   return (

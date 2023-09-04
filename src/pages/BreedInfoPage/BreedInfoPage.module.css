@@ -87,44 +87,33 @@
   border: 2px solid #FBE0DC;
 }
 
-@media all and (max-width: 1025px) {
+@media all and (max-width: 1290px) {
   .breedsInfoPage__wrapper {
     width: 480px;
     height: fit-content;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
+  .breedsInfoPage {
+    margin-top: 80px;
+  }
+  
   .breedsInfoPage__wrapper {
-    /* margin-top: 80px; */
-    width: 688px;
+    width: calc(100% - 40px);
   }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 425px) {
   .breedsInfoPage__wrapper {
-    padding: 10px;
-    width: 385px;
+    padding: 20px 10px;
+    width: calc(100% - 20px);
+  }
+
+  .breedsInfoPage__nameOfPage {
+    padding: 0 10px;
+    width: fit-content;
   }
 }
 
-@media all and (max-width: 376px) {
-  .breedsInfoPage__wrapper {
-    width: 336px;
-  }
 
-  .breedsInfoPage__navigationBlock {
-    flex-wrap: wrap;
-  }
-  .breedsInfoPage__breedID {
-    margin: 10px 0 0 ;
-  }
-
-}
-
-@media all and (max-width: 320px) {
-  .breedsInfoPage__wrapper {
-    width: 280px;
-  }
-
-}

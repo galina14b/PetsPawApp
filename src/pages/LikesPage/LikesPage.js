@@ -75,7 +75,7 @@ const LikesPage = () => {
 
         {votes.length === 0 && <NoItem/>}
 
-    {votes && filterVotes(votes)}  
+        {votes && filterVotes(votes)}  
         
       </div>
     </div>

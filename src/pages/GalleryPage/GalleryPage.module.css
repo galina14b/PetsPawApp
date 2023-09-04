@@ -181,8 +181,6 @@
   cursor: pointer;
 }
 
-
-
 .loadBtn {
   position: relative;
   margin-top: 18px;
@@ -209,7 +207,7 @@
   fill: #FFF;
 }
 
-@media all and (max-width: 1025px) {
+@media all and (max-width: 1290px) {
   .galleryPage {
     width: 520px;
   }
@@ -223,84 +221,101 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
   .galleryPage {
     margin-top: 80px;
     width: 728px;
   }
 
-    .selectOrder,
-    .selectType {
-      width: 290px;
-    }
+  .selectOrder,
+  .selectType {
+    width: 290px;
+  }
   
-    .selectBreed {
-      width: 290px;
-    }
-
-    .selectLimit {
-      width: 240px;
-    }
-}
-
-@media all and (max-width: 426px) {
-  .galleryPage {
-    width: 405px;
+  .selectBreed {
+    width: 290px;
   }
 
+  .selectLimit {
+    width: 240px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .galleryPage {
+    margin: 80px auto 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 700px) {
   .selectBlock {
     height: fit-content;
   }
 
-    .selectOrder,
-    .selectType {
-      width: 150px;
-    }
+  .selectOrder {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .selectBreed {
+    margin-right: 10px;
+  }
+
+  .selectLimit {
+    margin: 0 10px
+  }
   
-    .selectBlock__item:nth-of-type(2) {
-      flex-wrap: wrap;
-    }
+  .selectBlock__item {
+    flex-wrap: wrap;
+  }
 }
 
-@media all and (max-width: 376px) {
-  .galleryPage {
-    width: 356px;
+
+
+@media all and (max-width: 660px) {
+  .selectBreed {
+    margin-bottom: 10px;
+  }
+
+  .selectLimit {
+    margin-left: 0;
   }
 
   .galleryPage__navigationBlock {
     flex-wrap: wrap;
   }
+    
+  .galleryPage__nameOfPage {
+    margin-right: 10px;
+  }
 
   .upload {
-    margin: 10px 0 0;
+    margin-left: 0;
   }
-
-  .selectBlock__item {
-    flex-wrap: wrap;
-  }
-
-    .selectOrder,
-    .selectType,
-    .selectBreed,
-    .selectLimit {
-      width: 270px;
-      margin-bottom: 5px;
-    }
 }
 
-@media all and (max-width: 320px) {
-  .galleryPage {
-    width: 300px;
+@media all and (max-width: 425px) {
+  .galleryPage__wrapper {
+    padding: 20px 10px;
+  }
+}
+
+@media all and (max-width: 408px) {
+  .upload {
+    margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 380px) {
+  .selectBreed,
+  .selectLimit,
+  .selectOrder,
+  .selectType {
+    width: 100%;
   }
 
-  .selectBlock {
-    padding: 10px;
+  .selectType {
+    margin: 0;
   }
-
-    .selectOrder,
-    .selectType,
-    .selectBreed,
-    .selectLimit {
-      width: 240px;
-    }
 }

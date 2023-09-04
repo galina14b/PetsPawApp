@@ -93,7 +93,9 @@
   top: calc(50% - (26px/2));
 }
 
-@media all and (max-width: 1025px) {
+/* Breakpoints ==============================*/
+
+@media all and (max-width: 1290px) {
   .topLinksBlock {
     width: 520px;
   }
@@ -103,11 +105,11 @@
   }
 
   .actions__input {
-    width: 322px;
+    width: 320px;
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 980px) {
   .topLinksBlock {
     width: 728px;
   }
@@ -120,54 +122,49 @@
   }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 750px) {
   .topLinksBlock {
-    width: 405px;
+    width: 100%;
   }
+}
 
+@media all and (max-width: 720px) {
   .topLinksBlock__wrapper {
-    flex-wrap: wrap;
+    display: block;
+  }
+
+  .topLinksBlock__wrapper>div {
+    display: inline-block;
+    margin-right: 10px;
   }
 
   .actions__form {
-    width: 405px;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .actions__submitBtn {
+    left: calc(80% - 50px);
   }
 
   .actions__input {
-    width: 395px;
+    width: 80%;
   }
 }
 
-@media all and (max-width: 376px) {
-  .topLinksBlock {
-    width: 356px;
-  }
-
-  .actions__form {
-    width: 356px;
-  }
-
-  .actions__input {
-    width: 348px;
-  }
-}
-
-@media all and (max-width: 320px) {
-  .topLinksBlock {
-    width: 300px;
-  }
-
-  .actions__form {
-    width: 300px;
-  }
-
-  .actions__input {
-    width: 292px;
-  }
-
+@media all and (max-width: 430px) {
   .actions__input::placeholder {
     padding: 15px 10px;
     font-size: 16px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .actions__input {
+    width: 90%;
+  }
+
+  .actions__submitBtn {
+    left: calc(90% - 50px);
   }
 }

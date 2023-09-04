@@ -7,17 +7,16 @@ const override = {
 };
 
 const Spinner = () => {
-
   
   return (
-      <RingLoader
-        color={"#FBE0DC"}
-        loading={true}
-        cssOverride={override}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
+    <RingLoader
+      color={"#FBE0DC"}
+      loading={true}
+      cssOverride={override}
+      size={150}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
   )
 }
 

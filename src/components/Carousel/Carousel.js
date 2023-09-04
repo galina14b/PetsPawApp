@@ -23,9 +23,8 @@ const Carousel = ({list}) => {
         <img className={css.carousel__image} src={item.url} alt=""></img>
       </div>)
         })
-      }
-      
-      
+      }        
+        
     </Slider>}
     </>
   );
