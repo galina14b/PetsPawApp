@@ -16,7 +16,7 @@
 
 .actions__input {
   width: 462px;
-  height: 56px;
+  height: 54px;
   border-radius: 20px;
   background: #FFF;
   border: 2px solid transparent;
@@ -133,13 +133,14 @@
     display: block;
   }
 
-  .topLinksBlock__wrapper>div {
+  .actions__item {
     display: inline-block;
     margin: 10px 10px 0 0;
   }
 
   .actions__form {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .actions__submitBtn {

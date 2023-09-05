@@ -32,6 +32,11 @@
 
 @media all and (max-width: 980px) {
   .homePage {
+    width: calc(100% - 40px);
+  }
+  
+  .homePage__image,
+  .homePage__wrapper {
     display: none;
   }
 }
