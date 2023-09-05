@@ -31,8 +31,10 @@ const SearchPage = () => {
       }
     }
 
+    // To get all breeds
     getBreeds();
 
+    // To get only searching breed
     async function filter(data) {
       let searchingValue = value;
       let result = await data.filter((breed) => breed.name.toLowerCase().includes(searchingValue))

@@ -64,6 +64,7 @@ const Modal = ({ onClick }) => {
   let uploaderContentEl = (
     <div className={error ? css.modal__uploader + ' ' + css.modal__uploader_err : css.modal__uploader}>
       
+      {/* Initial upload block */}
       {!url && <div className={css.uploader__content}>
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M140 40C128.954 40 120 48.9543 120 59.9999C120 71.0456 128.954 79.9999 140 79.9999C151.046 79.9999 160 71.0456 160 59.9999C160 48.9543 151.046 40 140 40Z" fill="#F8F8F7"/>
@@ -72,7 +73,7 @@ const Modal = ({ onClick }) => {
         <p className={css.uploader__text}><span>Drag here</span> your file or <span>Click here</span> to upload</p>
       </div>}
 
-
+      {/* Upload block with image */}
       {url && <div className={css.uploader__content}>    
         <img className={css.uploader__img} src={url} alt="" />
         <p className={css.comments}>Image File Name: {file.name}</p>  
@@ -98,6 +99,7 @@ const Modal = ({ onClick }) => {
 
         {url && !error && <button className={css.uploader__btn} onClick={uploadingFiles}>UPLOAD PHOTO</button>}
 
+        {/* Feedback when image downloaded */}
         {isLoaded && <div className={css.loaded}>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM10 1.33333C5.21353 1.33333 1.33333 5.21353 1.33333 10C1.33333 14.7865 5.21353 18.6667 10 18.6667C14.7865 18.6667 18.6667 14.7865 18.6667 10C18.6667 5.21353 14.7865 1.33333 10 1.33333ZM15.1872 7.08313L9.42904 14.2809L4.90654 10.5121L5.76012 9.48785L9.23763 12.3858L14.1461 6.2502L15.1872 7.08313Z" fill="#97EAB9"/>
@@ -105,6 +107,7 @@ const Modal = ({ onClick }) => {
           <p className={css.comments}>Thanks for the Upload - Cat found!</p>
         </div>}
           
+        {/* Feedback when there is error */}
         {error && <div className={css.error}>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM10 1.33333C5.21353 1.33333 1.33333 5.21353 1.33333 10C1.33333 14.7865 5.21353 18.6667 10 18.6667C14.7865 18.6667 18.6667 14.7865 18.6667 10C18.6667 5.21353 14.7865 1.33333 10 1.33333ZM9.05719 10L5.5286 6.4714L6.4714 5.5286L10 9.05719L13.5286 5.5286L14.4714 6.4714L10.9428 10L14.4714 13.5286L13.5286 14.4714L10 10.9428L6.4714 14.4714L5.5286 13.5286L9.05719 10Z" fill="#FF868E"/>

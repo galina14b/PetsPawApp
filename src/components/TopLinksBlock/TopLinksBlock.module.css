@@ -135,12 +135,11 @@
 
   .topLinksBlock__wrapper>div {
     display: inline-block;
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
   }
 
   .actions__form {
     width: 100%;
-    margin-bottom: 10px;
   }
 
   .actions__submitBtn {

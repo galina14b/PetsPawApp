@@ -78,7 +78,7 @@ const GalleryPage = () => {
     }
   }
 
-  const upDatingImages = async (event) => {
+  const updatingImages = async (event) => {
     event.preventDefault();
     await getImages(breed, order, page, type);
   }
@@ -119,7 +119,7 @@ const GalleryPage = () => {
 
         {showModal && <Modal onClick={() => setShowModal(false)}/>}
 
-        <form onSubmit={upDatingImages}>
+        <form onSubmit={updatingImages}>
           <div className={css.selectBlock}>
 
           <div className={css.selectBlock__item}>

@@ -17,6 +17,7 @@ const TopLinksBlock = () => {
     <div className={css.topLinksBlock}>
       <div className={css.topLinksBlock__wrapper}>
         
+        {/* Searching block */}
         <form onSubmit={handleSearchInput} className={css.actions__form}>
           <input type="text" placeholder="Search for breeds by name" className={css.actions__input}></input>
           <button type='submit' className={css.actions__submitBtn}>
@@ -33,6 +34,7 @@ const TopLinksBlock = () => {
           </button>
         </form>
 
+        {/* Link to Likes */}
         <div className={css.actions__item}>
           <StyledTopLinkBlockLinks className={css.actions__navLink} to="/breeds/likes">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +43,7 @@ const TopLinksBlock = () => {
           </StyledTopLinkBlockLinks>  
         </div>
 
+        {/* Link to Favourites */}
         <div className={css.actions__item}>
           <StyledTopLinkBlockLinks className={css.actions__navLink + ' ' + css.actions__navLink_heart} to="/breeds/favourite">
             <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,6 +52,7 @@ const TopLinksBlock = () => {
           </StyledTopLinkBlockLinks>  
         </div>
 
+        {/* Link to Dislikes */}
         <div className={css.actions__item}>
           <StyledTopLinkBlockLinks className={css.actions__navLink} to="/breeds/dislikes">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
