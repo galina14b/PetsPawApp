@@ -112,13 +112,18 @@
 @media all and (max-width: 980px) {
   .topLinksBlock {
     width: 728px;
+    margin-bottom: 10px;
   }
   .actions__form {
-    width: 500px;
+    width: 400px;
   }
 
   .actions__input {
-    width: 492px;
+    width: 100%;
+  }
+
+  .actions__submitBtn {
+    left: calc(100% - 50px);
   }
 }
 

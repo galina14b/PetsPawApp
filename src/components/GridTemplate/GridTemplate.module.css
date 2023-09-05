@@ -247,6 +247,14 @@
   left: 10px;
 }
 
+.gridItem__icon:hover {
+  background: #FF868E;
+}
+
+.gridItem__icon:hover svg {
+  fill: #FFF;
+}
+
 @media all and (max-width: 1290px) {
   .gridContainer {
     width: fit-content;

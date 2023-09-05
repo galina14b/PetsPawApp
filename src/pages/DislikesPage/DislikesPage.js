@@ -17,28 +17,35 @@ const DisikesPage = () => {
   const [votes, setVotes] = useState([]);
 
   useEffect(() => {
-    getVotesResult()
-  }, [])
-
-  const getVotesResult = async () => {
+    const getVotesResult = async () => {
     try{   
       let response = await axios.get('/votes',
         {
           params: { limit: 100 }
         })   
       let result = response.data;
-      setVotes(result);
+      let updatedList = result.sort(compare)
+      setVotes(updatedList);
 
     } catch (error) {
       console.log(error)
     }
-  }; 
+    }; 
+    
+    getVotesResult()
+  }, [])
   
   const filterVotes = (array) => {
     let filtered = array.filter((item) => item.value === 0)
     return (
       <GridTemplate list={filtered.slice(0, 20)} isGallery={false} isAction={true} limit={20} />
     )
+  }
+
+  function compare(a, b) {
+    let dateA = new Date(a.created_at).getTime();
+    let dateB = new Date(b.created_at).getTime();
+    return dateB - dateA;
   }
 
   return (

@@ -18,21 +18,27 @@ const FavoritesPage = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getFavourites()
-  }, [])
-
-  const getFavourites = async () => {
+    const getFavourites = async () => {
     try{   
       let query_params = {
         limit: 100,     
       }
       let response = await axios.get('/favourites', { params: query_params }) 
       let result = response.data;
-      setImages(result);
-      console.log(result)
+      let updatedList = result.sort(compare)
+      setImages(updatedList);
     }catch(error){
       console.log(error)
     }
+    }
+    
+    getFavourites()
+  }, [])
+
+  function compare(a, b) {
+    let dateA = new Date(a.created_at).getTime();
+    let dateB = new Date(b.created_at).getTime();
+    return dateB - dateA;
   }
 
   return (
