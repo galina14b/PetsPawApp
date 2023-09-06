@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkPetsPawApp=self.webpackChunkPetsPawApp||[]).push([[541],{1541:function(e,a,s){s.r(a),s.d(a,{default:function(){return u}});var _="HomePage_homePage__GDK2b",n="HomePage_homePage__wrapper__BODuA",c="HomePage_homePage__image__yU4vR",r=s(184),u=function(){return(0,r.jsx)("div",{className:_,children:(0,r.jsx)("div",{className:n,children:(0,r.jsx)("div",{className:c})})})}}}]);
+//# sourceMappingURL=541.6b431017.chunk.js.map
