@@ -1,14 +1,13 @@
 {
-  "name": "Movies",
+  "name": "PetsPawApp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://galina14b.github.io/TestMacPaw/",
+  "homepage": "https://galina14b.github.io/PetsPawApp/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "bootstrap": "^5.3.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-drag-drop-files": "^2.3.10",
